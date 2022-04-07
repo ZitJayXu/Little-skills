@@ -1,16 +1,22 @@
+01
 #include<iostream>
 using namespace std;
-//位运算，一个数组中有两种数出现奇数次和偶数次，找奇数次的数
-int findoddnum(int arr[],int n) {
-	int Eor = arr[0] ;
-	for (int i = 1; i <n ; i++) {
+//位运算，一个数组中有一种数出现奇数次其他的数都出现偶数次，找这个奇数次的数
+int findoddnum(int arr[], int n) {
+	int Eor = arr[0];
+	for (int i = 1; i < n; i++) {
 		Eor = Eor ^ arr[i];
 	}
 	return Eor;
 }
 int main() {
-	int list[11] = { 2,2,2,3,3,3,2,2,2,2,2 };
-	cout << findoddnum(list,11) << endl;
+	int list[13] = { 2,2,4,4,3,3,3,2,2,0,0,1,1 };
+	cout << findoddnum(list, 13) << endl;
 	return 0;
 	system("pause");
 }
+02 
+#include<iostream>
+using namespace std;
+//两种数字出现奇数次，其他的数字出现偶数次
+
