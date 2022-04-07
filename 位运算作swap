@@ -1,0 +1,23 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+//位运算交换函数
+void swapl(int a,int b) {
+	int temp = a;
+	a = b;
+	b = temp;
+	cout << a << " " << b;
+}
+void Swapl(int a,int b) {
+	a = a ^ b;b = a ^ b;a = a ^ b;
+	cout << a << " " << b;
+}
+//测试
+int main() {
+	int a = 2, b = 1, c = 2, d = 1;
+	swapl(a, b);
+	cout <<endl;
+	Swapl(c, d);
+	return 0;
+	system("pause");
+}
