@@ -21,3 +21,31 @@ int main() {
 	return 0;
 	system("pause");
 }
+02.用于优化某些存在交换功能的code
+#include<iostream>
+#include<vector>
+using namespace std;
+void Swapl(int &a,int &b) {//引用方式传入
+	a = a ^ b;b = a ^ b;a = a ^ b;
+}
+//冒泡排序
+vector<int>& Bublesort1(vector<int>&a) {
+	for (int i = a.size(); i>0; i--) {
+		for (int j = 0; j < i-1; j++) {
+			if (a[j] > a[j + 1]) {
+				Swapl(a[j], a[j + 1]);
+			}
+		}
+	}
+	return a;
+}
+//测试
+int main(){
+	vector<int>res{ 2,3,1,6,5,4,9 };
+	vector<int>ans = Bublesort1(res);
+	for (int i = 0; i < res.size(); i++) {
+		cout << ans[i]<<" ";
+	}
+	return 0;
+	system("pause");
+}
